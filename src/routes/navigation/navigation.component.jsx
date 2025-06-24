@@ -1,7 +1,13 @@
 // React Components
 import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-import '../../routes/navigation/navigation.style.scss';
+import {
+    NavigationContainer,
+    LogoContainer,
+    NavLinksContainer,
+    NavLink
+} from './navigation.styles'
+// import './navigation.style.jsx';
 import { ReactComponent as Crownlogo } from '../../assets/crown.svg';
 
 // User components
@@ -17,22 +23,22 @@ const Navigation = () => { /* Our top level navigtion Component */
     const { isOpen } = useContext(CartContext)
     return (
         <>
-            <div className="navigation">
-                <Link className="logo-container" to='/'><Crownlogo className="logo" /></Link>
-                <div className='nav-links-container'>
-                    <Link className='nav-link' to={'/shop'}>Shop</Link>
+            <NavigationContainer>
+                <LogoContainer to='/'><Crownlogo className="logo" /></LogoContainer>
+                <NavLinksContainer>
+                    <NavLink to={'/shop'}>Shop</NavLink>
                     {currentUser ? (
-                        <span className='nav-link' onClick={signOutUser}>
+                        <NavLink as='span' onClick={signOutUser}>
                             SIGN OUT
-                        </span>
+                        </NavLink>
 
                     ) :
-                        <Link className='nav-link' to='/auth'>SIGN IN</Link>
+                        <NavLink to='/auth'>SIGN IN</NavLink>
                     }
                     <CartIcon />
-                </div>
+                </NavLinksContainer>
                 {isOpen && <CartDropDown />}
-            </div>
+            </NavigationContainer>
             <Outlet />
         </>
 

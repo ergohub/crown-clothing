@@ -1,5 +1,5 @@
 // Compnents
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react';
 
 // Cart Context - Stores data related to the cart
 export const CartContext = createContext({

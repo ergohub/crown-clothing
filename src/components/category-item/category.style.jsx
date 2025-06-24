@@ -1,4 +1,6 @@
-.category-container {
+import styled from "styled-components";
+
+export const CategoryContainer = styled.div`
     min-width: 30%;
     height: 240px;
     flex: 1 1 auto;
@@ -12,12 +14,7 @@
     &:hover {
         cursor: pointer;
 
-        & .background-image {
-            transform: scale(1.1);
-            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-        }
-
-        & .category-body-container {
+        &.category-body-container {
             opacity: 0.9;
         }
     }
@@ -33,15 +30,22 @@
     &:last-child {
         margin-left: 7.5px;
     }
-
-    .background-image {
+`
+export const BackgroundImage = styled.div`
         width: 100%;
         height: 100%;
         background-size: cover;
         background-position: center;
-    }
+        background-image: ${({ imageurl }) => `url(${imageurl})`};
 
-    .category-body-container {
+        &:hover {
+            transform: scale(1.1);
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+`
+
+export const CategoryBodyContainer = styled.div`
+
         height: 90px;
         padding: 0 25px;
         display: flex;
@@ -53,7 +57,7 @@
         opacity: 0.7;
         position: absolute;
 
-        h2 {
+            h2 {
             font-weight: bold;
             margin: 0 6px 0;
             text-transform: capitalize;
@@ -61,10 +65,10 @@
             color: #4a4a4a;
         }
 
-        p {
+            p {
             font-weight: lighter;
             text-transform: uppercase;
             font-size: 16px;
         }
-    }
-}
+
+`

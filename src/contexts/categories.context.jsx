@@ -1,6 +1,5 @@
 // React Components
-import { createContext, useState, useEffect } from "react";
-import SHOP_DATA from '../shop/shop-data.js';
+import { createContext, useState, useEffect } from 'react';
 import { getCategoriesAndDocuments } from "../utils/firebase/firebase.util.js";
 
 // const products = SHOP_DATA;
@@ -15,7 +14,6 @@ export const CategoriesProvider = ({ children }) => {
     useEffect(() => {
         const getCategoryMap = async () => {
             const categoryMap = await getCategoriesAndDocuments();
-            console.log(categoryMap);
             setCategoriesMap(categoryMap);
         }
         getCategoryMap();

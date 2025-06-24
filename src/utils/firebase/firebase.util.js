@@ -58,7 +58,7 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
         batch.set(docRef, object);
     });
     await batch.commit();
-    console.log('Finished');
+    // console.log('Finished');
 };
 
 // get our data from Firestore Categories collection
@@ -79,7 +79,7 @@ export const createUserFromAuth = async (userAuth, additionalInformation = {}) =
 
     const UserSnapShot = await getDoc(userDocRef)
 
-    console.log(UserSnapShot);
+    // console.log(UserSnapShot);
 
     if (!UserSnapShot.exists()) {
         const { displayName, email } = userAuth;

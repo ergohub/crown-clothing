@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react';
 import { onAuthStateChangedListener, signOutUser, createUserFromAuth } from "../utils/firebase/firebase.util";
 
 //as the actual value that we want
