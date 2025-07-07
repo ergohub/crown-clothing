@@ -12,16 +12,18 @@ import Shop from "./shop/shop.component";
 import CheckOut from "./components/checkout/checkout.component";
 
 const App = () => {
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
         createUserFromAuth(user);
       }
-      dispatch(setCurrentUser(user))
+      dispatch(setCurrentUser(user));
     });
     return unsubscribe;
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <Routes>

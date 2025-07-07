@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 // Providers
 import { Provider } from 'react-redux';
-import { CategoriesProvider } from './contexts/categories.context';
+// import { CategoriesProvider } from './contexts/categories.context';
 import { CartProvider } from './contexts/cart.context';
-import { UserProvider } from './contexts/user.context';
+// import { UserProvider } from './contexts/user.context';
 import { store } from './store/store';
 
 // Standards
@@ -21,13 +21,13 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <UserProvider>
-          <CategoriesProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </CategoriesProvider>
-        </UserProvider>
+        {/* <UserProvider> */}
+        {/* <CategoriesProvider> */}
+        <CartProvider>
+          <App />
+        </CartProvider>
+        {/* </CategoriesProvider> */}
+        {/* </UserProvider> */}
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
