@@ -1,6 +1,5 @@
 // cart-dropdown.styles.scss 
 import styled from 'styled-components';
-import Button from '../button/button.component';
 
 export const CartDropDownContainer = styled.div`
 position: absolute;
@@ -15,9 +14,7 @@ position: absolute;
     right: 40px;
     z-index: 5;
 
-    ${Button} {
-        margin-top: auto;
-    }
+
 `
 
 export const EmptyMessage = styled.span`

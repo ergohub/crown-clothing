@@ -36,7 +36,7 @@ export const BackgroundImage = styled.div`
         height: 100%;
         background-size: cover;
         background-position: center;
-        background-image: ${({ imageurl }) => `url(${imageurl})`};
+        background-image: ${({ $imageurl }) => `url(${$imageurl})`};
 
         &:hover {
             transform: scale(1.1);

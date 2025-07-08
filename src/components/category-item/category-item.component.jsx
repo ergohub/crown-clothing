@@ -10,7 +10,7 @@ const CategoryItem = ({ category }) => {
 
     <CategoryContainer className='large' onClick={onNavigateHandler}>
       <BackgroundImage
-        imageurl={imageUrl}
+        $imageurl={imageUrl}
       />
       <CategoryBodyContainer>
         <h2>{title}</h2>
