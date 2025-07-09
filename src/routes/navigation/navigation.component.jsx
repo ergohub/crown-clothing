@@ -1,9 +1,9 @@
 // React Components
-import { useContext } from "react";
+// import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
-
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import {
     NavigationContainer,
     LogoContainer,
@@ -19,11 +19,12 @@ import CartDropDown from "../../components/cart/cart-dropdown.component";
 // import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.util";
 
-import { CartContext } from "../../contexts/cart.context";
+// import { CartContext } from "../../contexts/cart.context";
 
 const Navigation = () => { /* Our top level navigtion Component */
     // const { currentUser } = useContext(UserContext)
-    const { isOpen } = useContext(CartContext)
+    const isOpen = useSelector(selectIsCartOpen)
+    // const { isOpen } = useContext(CartContext)
     const currentUser = useSelector((state) => state.user.currentUser)
     return (
         <>
