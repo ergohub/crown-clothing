@@ -14,14 +14,15 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const middleWares = [
-    logger,
-]
+const middleWares = [process.env.NODE_ENV !== 'production' && logger,].filter(Boolean) // Hide middleware if not in production
 /*
 Middlewares ehance the store. They catch actions
 before they hit our reducers and log out the state.
 */
-const composedEnhancers = compose(applyMiddleware(...middleWares))
+
+const composeEnhancer = (process.env.NODE_ENV !== 'production' && window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
+const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares))
 
 export const store = createStore(persistedReducer, undefined, composedEnhancers);
 
