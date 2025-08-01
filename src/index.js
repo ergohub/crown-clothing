@@ -22,17 +22,17 @@ root.render(
 
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <BrowserRouter>
-          {/* <UserProvider> */}
-          {/* <CategoriesProvider> */}
-          {/* <CartProvider> */}
-          <App />
-          {/* </CartProvider> */}
-          {/* </CategoriesProvider> */}
-          {/* </UserProvider> */}
-        </BrowserRouter>
-      </PersistGate>
+      {/* <PersistGate persistor={persistor}> */}
+      <BrowserRouter>
+        {/* <UserProvider> */}
+        {/* <CategoriesProvider> */}
+        {/* <CartProvider> */}
+        <App />
+        {/* </CartProvider> */}
+        {/* </CategoriesProvider> */}
+        {/* </UserProvider> */}
+      </BrowserRouter>
+      {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>
 );
