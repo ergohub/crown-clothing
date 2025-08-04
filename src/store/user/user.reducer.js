@@ -12,10 +12,10 @@ export const userSlice = createSlice({
     initialState: INITAL_STATE,
     reducers: {
         setCurrentUser(state, action) {
-            state.currentUser = action.payload // actually genertes a new state object.  Only mutation style.
-        }
-    }
-})
+            state.currentUser = action.payload; // actually genertes a new state object.  Only mutation style.
+        },
+    },
+});
 
 // need to give state a value
 // const userReducer = (state = INITAL_STATE, action) => {
@@ -40,4 +40,6 @@ export const userSlice = createSlice({
 
 export const { setCurrentUser } = userSlice.actions; // returns the action
 
-export const userReducer = userSlice.reducer; // reducer
+const userReducer = userSlice.reducer; // reducer
+
+export default userReducer;

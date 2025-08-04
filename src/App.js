@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from "react-router-dom";
 import { onAuthStateChangedListener, signOutUser, createUserFromAuth } from "../src/utils/firebase/firebase.util";
-import { setCurrentUser } from './store/user/user.action';
+import { setCurrentUser } from './store/user/user.reducer';
 
 // component imports
 import Home from "./routes/home/home.component";
@@ -20,6 +20,7 @@ const App = () => {
       if (user) {
         createUserFromAuth(user);
       }
+      console.log(setCurrentUser(user))
       dispatch(setCurrentUser(user));
     });
     return unsubscribe;

@@ -17,7 +17,7 @@ import { rootReducer } from "./root-reducer";
 
 // const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// const middleWares = [process.env.NODE_ENV !== 'production' && logger, thunk].filter(Boolean) // Hide middleware if not in production
+const middleWares = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean) // Hide middleware if not in production
 // /*
 // Middlewares ehance the store. They catch actions
 // before they hit our reducers and log out the state.
@@ -25,7 +25,9 @@ import { rootReducer } from "./root-reducer";
 
 export const store = configureStore({
     reducer: rootReducer,
-    // middleware: middleWares
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false,
+    }).concat(middleWares),
 });
 
 // const composeEnhancer = (process.env.NODE_ENV !== 'production' && window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose; // Devtools
