@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { USER_ACTION_TYPES } from '../user/user.types'
+// import { USER_ACTION_TYPES } from '../user/user.types'
 // import { setCurrentUser } from './user.action';
 
 const INITAL_STATE = {

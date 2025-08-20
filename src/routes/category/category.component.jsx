@@ -10,7 +10,6 @@ import '../category/category.styles.jsx';
 import { CategoryContainer, Title } from '../category/category.styles.jsx';
 
 const Category = () => {
-
     const { category } = useParams();
     const categoriesMap = useSelector(selectCategoriesMap);
     // const { categoriesMap } = useContext(CategoriesContext);

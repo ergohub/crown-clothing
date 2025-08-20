@@ -7,7 +7,8 @@ import { Routes, Route } from 'react-router-dom';
 import CategoriesPreview from '../routes/categories-preview/categories-preview.component';
 import Category from '../routes/category/category.component';
 import { useDispatch } from 'react-redux';
-import { fetchCategoriesAsync } from '../store/categories/category.action.js';
+// import { fetchCategoriesAsync } from '../store/categories/category.action.js';
+import { setCategories } from '../store/categories/category.reducer.js';
 
 
 // React Components
@@ -19,13 +20,14 @@ const Shop = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchCategoriesAsync());
-        // const getCategoryMap = async () => {
-        //     // const categoriesArray = await getCategoriesAndDocuments();
-        //     // console.log(categoriesArray);
-        // }
-        // getCategoryMap();
-    }, []);
+        // dispatch(fetchCategoriesAsync());
+        const getCategoryMap = async () => {
+            const categoriesArray = await getCategoriesAndDocuments();
+            dispatch(setCategories(categoriesArray));
+            // console.log(categoriesArray);
+        }
+        getCategoryMap();
+    }, [dispatch]);
 
     return (
         <Routes>

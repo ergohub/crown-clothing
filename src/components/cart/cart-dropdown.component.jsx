@@ -1,36 +1,37 @@
-// React Compoments
-// import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import { useSelector } from "react-redux";
-import { selectCartItems } from "../../store/cart/cart.selector";
-
-// import { CartContext } from "../../contexts/cart.context";
+import { selectCartItems } from '../../store/cart/cart.selector';
+import Button from '../button/button.component';
 import CartItem from './cart-item/cart-item.component';
 
-import Button from '../button/button.component';
-// Styles
-// import './cart-dropdown.styles';
-import { CartDropDownContainer, EmptyMessage, CartItems } from "./cart-dropdown.styles";
+import {
+    CartDropDownContainer,
+    EmptyMessage,
+    CartItems,
+} from './cart-dropdown.styles';
 
-const CartDropDown = () => {
-    const cartItems = useSelector(selectCartItems)
-    // const { cartItems } = useContext(CartContext);
+const CartDropdown = () => {
+    const cartItems = useSelector(selectCartItems);
     // console.log(cartItems)
+    const navigate = useNavigate();
+
+    const goToCheckoutHandler = () => {
+        navigate('/checkout');
+    };
+
     return (
         <CartDropDownContainer>
             <CartItems>
-                {
-                    !cartItems.length
-                        ? (<EmptyMessage>Your cart is empty</EmptyMessage>)
-                        : (cartItems.map(item => (
-                            <CartItem key={item.id} cartItem={item}></CartItem>
-                        )))
-                }
+                {cartItems.length ? (
+                    cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+                ) : (
+                    <EmptyMessage>Your cart is empty</EmptyMessage>
+                )}
             </CartItems>
-            <Link to={'/checkout'}><Button>GO TO CHECKOUT</Button></Link>
+            <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
         </CartDropDownContainer>
-    )
-}
+    );
+};
 
-export default CartDropDown;
+export default CartDropdown;

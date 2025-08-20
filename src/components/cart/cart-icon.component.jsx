@@ -6,11 +6,11 @@ import { useSelector, useDispatch } from 'react-redux';
 // Components
 import { ReactComponent as CartLogo } from '../../assets/shopping-bag.svg';
 // import { CartContext } from '../../contexts/cart.context';
-import { selectIsCartOpen, selectCartItems, selectCartCount } from '../../store/cart/cart.selector';
-import { setIsCartOpen } from '../../store/cart/cart.actions';
+import { selectIsCartOpen, selectCartCount } from '../../store/cart/cart.selector';
+import { setIsCartOpen } from '../../store/cart/cart.reducer';
 
 // styles
-import { CartIconContainer, ShopIcon, ItemCount } from './cart-icon.styles';
+import { CartIconContainer } from './cart-icon.styles';
 
 const CartIcon = () => {
     // const { isOpen, setIsOpen, itemCount } = useContext(CartContext);

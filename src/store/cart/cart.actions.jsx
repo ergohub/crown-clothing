@@ -5,7 +5,7 @@ export const setIsCartOpen = (boolean) => {
     return createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean);
 };
 
-const addCartItem = (cartItems, productToAdd) => {
+export const addCartItem = (cartItems, productToAdd) => {
 
     // - Find if cartIems constins productToAdd
     const existingItem = cartItems.find(
@@ -25,7 +25,7 @@ const addCartItem = (cartItems, productToAdd) => {
     return [...cartItems, { ...productToAdd, quantity: 1 }];
 }
 
-const removeCartItem = (cartItems, cartItemToRemove) => {
+export const removeCartItem = (cartItems, cartItemToRemove) => {
 
     const existingCartItem = cartItems.find(
         (cartItem) => cartItem.id === cartItemToRemove.id
@@ -42,7 +42,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     )
 };
 
-const clearCartItem = (cartItems, productToDelete) => {
+export const clearCartItem = (cartItems, productToDelete) => {
     return cartItems.filter(cartItem => cartItem.id !== productToDelete.id)
 };
 
@@ -52,7 +52,7 @@ export const addItemToCart = (cartItems, productToAdd) => {
     return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
 };
 
-export const removeItemToCart = (cartItems, productToRemove) => {
+export const removeItemFromCart = (cartItems, productToRemove) => {
     const newCartItems = removeCartItem(cartItems, productToRemove);
     return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
 

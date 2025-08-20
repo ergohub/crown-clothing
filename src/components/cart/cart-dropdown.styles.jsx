@@ -1,6 +1,7 @@
 // cart-dropdown.styles.scss 
 import styled from 'styled-components';
 
+
 export const CartDropDownContainer = styled.div`
 position: absolute;
     width: 240px;
@@ -13,8 +14,6 @@ position: absolute;
     top: 90px;
     right: 40px;
     z-index: 5;
-
-
 `
 
 export const EmptyMessage = styled.span`

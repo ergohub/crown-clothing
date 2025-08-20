@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 // import { CategoriesProvider } from './contexts/categories.context';
 // import { CartProvider } from './contexts/cart.context';
 // import { UserProvider } from './contexts/user.context';
-import { store, persistor } from './store/store';
+import { store } from './store/store';
 
 // Standards
 import App from './App';

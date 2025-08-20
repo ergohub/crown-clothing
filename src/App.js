@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from "react-router-dom";
-import { onAuthStateChangedListener, signOutUser, createUserFromAuth } from "../src/utils/firebase/firebase.util";
+import { onAuthStateChangedListener, createUserFromAuth } from "../src/utils/firebase/firebase.util";
 import { setCurrentUser } from './store/user/user.reducer';
 
 // component imports
@@ -9,7 +9,7 @@ import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./components/authentication/authentication.component";
 import Shop from "./shop/shop.component";
-import CheckOut from "./components/checkout/checkout.component";
+import CheckOut from "./routes/checkout/checkout.component";
 
 const App = () => {
 
