@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './utils/stripe/stripe.utils';
 
 // Providers
 import { Provider } from 'react-redux';
@@ -24,13 +26,9 @@ root.render(
     <Provider store={store}>
       {/* <PersistGate persistor={persistor}> */}
       <BrowserRouter>
-        {/* <UserProvider> */}
-        {/* <CategoriesProvider> */}
-        {/* <CartProvider> */}
-        <App />
-        {/* </CartProvider> */}
-        {/* </CategoriesProvider> */}
-        {/* </UserProvider> */}
+        <Elements stripe={stripePromise}>
+          <App />
+        </Elements>
       </BrowserRouter>
       {/* </PersistGate> */}
     </Provider>
