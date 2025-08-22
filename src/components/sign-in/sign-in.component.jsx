@@ -1,7 +1,7 @@
 // react dependecies
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 // components
-import { signInWithGooglePopup, createUserFromAuth, signInUserWithEmailAndPassword } from '../../utils/firebase/firebase.util';
+import { signInWithGooglePopup, signInUserWithEmailAndPassword } from '../../utils/firebase/firebase.util';
 import FormInput from '../form-input/form-input.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 // import { UserContext } from '../../contexts/user.context';
